@@ -1,4 +1,3 @@
-.idea/
-tempDir
-node_modules/
-*.map
+node_modules
+yarn.lock
+test/book.epub

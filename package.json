@@ -1,45 +1,43 @@
 {
-  "name": "epub-gen",
-  "version": "0.1.0",
-  "description": "A library to generate EPUB from HTML",
-  "main": "index.js",
-  "scripts": {
-    "compile": "coffee --compile --output ./ ./",
-    "test": "node test"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/cyrilis/epub-gen.git"
-  },
-  "keywords": [
-    "epub",
-    "generator",
-    "ebook",
-    "html",
-    "epub-generator"
-  ],
-  "author": "Cyril Hou <houshoushuai@gmail.com> (http://cyrilis.com/)",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/cyrilis/epub-gen/issues"
-  },
-  "homepage": "https://github.com/cyrilis/epub-gen",
-  "dependencies": {
-    "archiver": "^3.0.0",
-    "cheerio": "^0.22.0",
-    "diacritics": "^1.3.0",
-    "ejs": "^2.6.1",
-    "entities": "^1.1.2",
-    "fs-extra": "^7.0.1",
-    "mime": "^2.4.0",
-    "q": "^1.5.1",
-    "rimraf": "^2.6.3",
-    "superagent": "^3.8.3",
-    "superagent-proxy": "^2.0.0",
-    "underscore": "^1.9.1",
-    "uslug": "^1.0.4"
-  },
-  "devDependencies": {
-    "coffeescript": "^2.3.2"
-  }
+	"name": "html-to-epub",
+	"version": "0.2.0",
+	"description": "A library to generate EPUB from HTML. Inspired by epub-gen.",
+	"license": "MIT",
+	"repository": "lesjoursfr/html-to-epub",
+	"homepage": "https://github.com/lesjoursfr/html-to-epub#readme",
+	"bugs": {
+		"url": "https://github.com/lesjoursfr/html-to-epub/issues"
+	},
+	"engines": {
+		"node": ">=12"
+	},
+	"scripts": {
+		"test": "node test/test.js"
+	},
+	"files": [
+		"index.js", "lib/**/*", "templates/**/*"
+	],
+	"keywords": [
+		"epub",
+		"generator",
+		"ebook",
+		"html"
+	],
+	"dependencies": {
+		"archiver": "^5.0.0",
+		"cheerio": "^1.0.0-rc.3",
+		"diacritics": "^1.3.0",
+		"ejs": "^3.1.3",
+		"entities": "^2.0.3",
+		"eslint": "^7.6.0",
+		"fs-extra": "^9.0.1",
+		"mime": "^2.4.6",
+		"q": "^1.5.1",
+		"rimraf": "^3.0.2",
+		"superagent": "^5.3.1",
+		"superagent-proxy": "^2.0.0",
+		"underscore": "^1.10.2",
+		"uslug": "^1.0.4"
+	},
+	"devDependencies": {}
 }
