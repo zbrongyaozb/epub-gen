@@ -26,4 +26,7 @@ let optionsAlice = {
 
 (new EPub(optionsAlice, path.resolve(__dirname, "./book.epub"))).then(() => {
 	console.log(`${optionsAlice.title} is generated successfully`);
+}, (error) => {
+	console.log(`${optionsAlice.title} can't be generated`);
+	console.error(error);
 });
