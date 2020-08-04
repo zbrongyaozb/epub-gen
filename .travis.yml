@@ -1,36 +1,36 @@
-language: "node_js"
+language: node_js
 jobs:
   include:
-    - stage: "Test the project"
-      name: "Test the project on Linux with NodeJS 12"
-      os: "linux"
-      node_js: "12"
-      script: npm run test
-    - stage: "Test the project"
-      name: "Test the project on Linux with NodeJS 14"
-      os: "linux"
-      node_js: "14"
-      script: npm run test
-    - stage: "Test the project"
-      name: "Test the project on Windows with NodeJS 12"
-      os: "windows"
-      node_js: "12"
-      script: npm run test
-    - stage: "Test the project"
-      name: "Test the project on Windows with NodeJS 14"
-      os: "windows"
-      node_js: "14"
-      script: npm run test
-    - stage: "Release to NPM"
-      name: "Publish the package to the npmjs repository"
-      os: "linux"
-      node_js: "14"
-      deploy:
-        provider: "npm"
-        email: "npmjs@eraud.dev"
-        api_key:
-          secure: "u+Q1ppb+0D9JJ/gWy/BZAt+vhWVNSs4TuNSdrRJ2u0fj/yfODvMM7bZui9JOJ7wu6lWLRqvJbnEXaazoJARkmct/G5pB6Q9b/rOuW3lr5k3HUgkTpY2cTC9BUh3ce/gjOqFYsuZRfbIBlXjbX5Y/1qLCUuBI+D2o9AbhK80asnSVmg4K6a7H57vBpKDFrlcr+XeHkh5ygfwGQKbeYW4u7M88jILPEDp+523vHcgjpFie5gpDpvdPB4AoiLuqpfuyStzLn2ynMmXw3OkM3eiVNMMcGDugipDt63wRZSjetH6GQRTHOEzN66ieG7SgnfUMdd2wJtwt89sWbA5kbUNhEISrmuAUOEYeQb+ePjXWdwRgWt6+Pi9UAc3KEYq2168y7AmD3K05UBJF1Amur4CcK/fI3bstaALF6wQ5bmhqXD1DiXJ3n0qUIG3NwYyvgg6HS9f/NIlnhxNq3D9ygQuE6HJqkrCjZqSmoFWUASyTugLOCUm2RXHm024+4hEKu5bcDyfuIOlUJLu8b2FGmeUtkqROaY5pU+UHwgx8cYXwwmjebIqukGvHrHryBdLNQI+QG5HvM1Izzo22YJI5nYhJWQpdMffTs7583kLcRGwdvX+xuBRhjlEpi2v/g/0g4ozaKDy8gWm5rhe3lGNxHAgWZqoRwkiT+ttahYKzIsiTtZQ="
-        on:
-          tags: "true"
-          repo: "lesjoursfr/html-to-epub"
-        cleanup: "true"
+  - stage: Test the project
+    name: Test the project on Linux with NodeJS 12
+    os: linux
+    node_js: '12'
+    script: npm run test
+  - stage: Test the project
+    name: Test the project on Linux with NodeJS 14
+    os: linux
+    node_js: '14'
+    script: npm run test
+  - stage: Test the project
+    name: Test the project on Windows with NodeJS 12
+    os: windows
+    node_js: '12'
+    script: npm run test
+  - stage: Test the project
+    name: Test the project on Windows with NodeJS 14
+    os: windows
+    node_js: '14'
+    script: npm run test
+  - stage: Release to NPM
+    name: Publish the package to the npmjs repository
+    os: linux
+    node_js: '14'
+    deploy:
+      provider: npm
+      email: npmjs@eraud.dev
+      api_key:
+        secure: TEbVeaZmZus6ufjK+7IPDy3bco7SX+5l4P0OW8KyKtqk2zoSiyvBTpUFyqWhggNzITAS7NACzWtpO2D6k6rydBdT2DxdgLIeApArNNGAaOPxvc4dcUEZyY2VJuHFXy3rbvOgleXCSJ3pqNWedET5ZiibfjOHM6np/bPAJjsu3rvEvSYr55poqIixtpR3gdaftxOzmd4RCI5DIqq+DNmKrqEGMC9zk241t0QRaiV/ZmSNGADaezAU2xnHotGaER+C7m6Cih0ioAm+zkn3VSLJrK8Ww40cukKnfRO0z0FcpQoAUsqVAplbjPYoNAE3TYfkZkKYatLnMJtzLbxqntcuK2KVgRq3O2jNYQcivsoYADN4jylh9qlRAXUAgj1KnKUhRysVg5/Cnbbgs4XuPJWiGSuVBwDIedth0tpz4oHX4chXIL3QxeCJ3aveATsgE0Zoi1xM11Q1A5CLQY4RWw30v8CzaySaV0YYQsIkoW4CGWUlEIEuzVx2e1EY/8TSPYZmuGmsPoUFQ3Wb8Sk8NxmeRqN/bfQoGaEEXOWa9PKxoV8NQDyNJCw/idaGYTItjFslnGgVrflF8QEMVoV3K0GrM1RnLa56nbYT8jNDCTq/EgGHqoUP3xUPeopYM+QyPyhD8erGNTfACwfm94OTHUGuJhVlxKxIOvt+hKaKyLX4piE=
+      on:
+        tags: true
+        repo: lesjoursfr/html-to-epub
+      cleanup: 'true'
