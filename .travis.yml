@@ -33,4 +33,4 @@ jobs:
         on:
           tags: "true"
           repo: "lesjoursfr/html-to-epub"
-        skip_cleanup: "true"
+        cleanup: "true"
