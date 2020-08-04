@@ -36,7 +36,6 @@
 		"rimraf": "^3.0.2",
 		"superagent": "^5.3.1",
 		"superagent-proxy": "^2.0.0",
-		"underscore": "^1.10.2",
 		"uslug": "^1.0.4"
 	},
 	"devDependencies": {}
