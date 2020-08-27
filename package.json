@@ -27,7 +27,7 @@
 		"archiver": "^5.0.0",
 		"cheerio": "^1.0.0-rc.3",
 		"diacritics": "^1.3.0",
-		"ejs": "^3.1.3",
+		"ejs": "^3.1.5",
 		"entities": "^2.0.3",
 		"fs-extra": "^9.0.1",
 		"mime": "^2.4.6",
@@ -35,6 +35,6 @@
 		"uslug": "^1.0.4"
 	},
 	"devDependencies": {
-		"eslint": "^7.6.0"
+		"eslint": "^7.7.0"
 	}
 }
