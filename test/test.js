@@ -16,14 +16,28 @@ async function runTestOn(input) {
 async function runTests() {
 	// Test with a book
 	try {
-		await runTestOn("book");
+		await runTestOn("book-v2");
+	} catch (err) {
+		console.error(err);
+	}
+
+	// Test with a book
+	try {
+		await runTestOn("book-v3");
 	} catch (err) {
 		console.error(err);
 	}
 
 	// Test with an article
 	try {
-		await runTestOn("article");
+		await runTestOn("article-v2");
+	} catch (err) {
+		console.error(err);
+	}
+
+	// Test with an article
+	try {
+		await runTestOn("article-v3");
 	} catch (err) {
 		console.error(err);
 	}
