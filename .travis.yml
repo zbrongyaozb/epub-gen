@@ -1,10 +1,8 @@
-version: ~> 1.0
+version: "~> 1.0"
 language: node_js
-branches:
-  only:
-  - master
 os: linux
 dist: focal
+if: branch = "master" OR tag IS present
 jobs:
   include:
   - stage: Test the project
@@ -33,3 +31,6 @@ jobs:
         tags: true
         repo: lesjoursfr/html-to-epub
       cleanup: true
+notifications:
+  slack:
+    secure: WZfOLQFv724W/H7gGj/PJt3AzSVVYbrQ4m4m1FG3gGhHnYHBgj2OCk3LRcWYrmTLWi5weNN2LdhYtrqFuIhCQ2Ht42QEpKQiAxBgX+nqY/BlURk7BSpzJs8oGC94B2mzhc89FhQmYpgctMgFYQdcdNlfcBnM6gACIUqPnEdWvKeESHHG17Ajwd3+WMM9K3Wq2uxjIZleigRYUqXULIxrxKhErx6KwhiXWqNj8cUZw8OVJlC5qrNi27v+5Efj+a+wSOndtkhCh1XmYXPsb3jgu5/VX2nFJu0DQC7cGByubpuCiZpdV0E0A5g4vmxNp1o+0iXTZus2JGC0PA2082WHitFnfDupSsXB9BA4oB8cmGqedtYhPN+IgyyZyS5OsczeBojw3+NeZNF0wfpipMCYsR0yL23Yewjbk1xv9SO46weFmU/jwx9KrLMFhtUFqxKGZHxjNX2sRQnc3CWbgp+iWFQbSkVB1NzEgMpr9IThqacQ3Ov1GAhb2o8G5IqbPxSx/A6d1OgGQiQNj5UcmIHXNMtksabZmpiYu6tv/+HJkRqzbHk6Gn9ZdgcOaN4XwBAqra1K4EBxD3pN0yUi/GKP6G32aODFE8RUrxXdHMApZoWYl2B7Bd573C1KCIErVdnIfnTYkfCrO9UIevVVmF0MAytntwvuyI315xfDSUI1kOA=
