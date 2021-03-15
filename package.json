@@ -15,7 +15,9 @@
 		"test": "node test/test.js"
 	},
 	"files": [
-		"index.js", "lib/**/*", "templates/**/*"
+		"index.js",
+		"lib/**/*",
+		"templates/**/*"
 	],
 	"keywords": [
 		"epub",
