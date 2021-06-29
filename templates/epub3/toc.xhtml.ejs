@@ -18,7 +18,7 @@
             <a href="<%= content.href %>"><%= (content.title || "Chapter "+ (1+index)) %><% if(content.author.length){ %> - <small class="toc-author"><%= content.author.join(",") %></small><% }%><% if(content.url){ %><span class="toc-link"><%= content.url %></span><% }%></a><% if(content.childs){ %>
                 <ol><% content.childs.forEach(function(child, childIndex){ %>
                     <li class="table-of-content">
-                        <a href="<%= child.href %>"><%= (child.title || "Chapter "+index+"_"+(1+childIndex)) %><% if(child.author.length){ %> - <small class="toc-author"><%= child.author.join(",") %></small><% }%><% if(child.url){ %><span class="toc-link"><%= child.url %></span><% }%></a>
+                        <a href="<%= child.href %>"><%= (child.title || "Chapter "+(1+index)+"_"+(1+childIndex)) %><% if(child.author.length){ %> - <small class="toc-author"><%= child.author.join(",") %></small><% }%><% if(child.url){ %><span class="toc-link"><%= child.url %></span><% }%></a>
                     </li><% }) %>
                 </ol><% } %>
         </li><% } %>
