@@ -33,14 +33,23 @@
             <navLabel>
                 <text><%= (1+index) + ". " + (content.title || "Chapter " + (1+index))%></text>
             </navLabel>
-            <content src="<%= content.href %>"/><% if(content.childs){ %>
-                <% content.childs.forEach(function(child, childIndex){ %>
+            <content src="<%= content.href %>"/><% if(content.childs || content.childTitles){ %>
+        <% if(content.childTitles) { content.childTitles.forEach(function(child, childIndex){ %>
+            <navPoint id="content_<%= index %>_<%= childIndex %>" playOrder="<%= _index++ %>" class="chapter">
+                <navLabel>
+                    <text><%= (1+index) +"_"+(1+childIndex) +". " + child.title%></text>
+                </navLabel>
+                <content src="<%= content.href %>#<%= child.anchor %>"/>
+            </navPoint>
+        <% }) }%>
+        <% if(content.childs) { content.childs.forEach(function(child, childIndex){ %>
             <navPoint id="content_<%= index %>_<%= childIndex %>_<%= child.id %>" playOrder="<%= _index++ %>" class="chapter">
                 <navLabel>
-                    <text><%= (1+index) +"_"+(1+childIndex) +". " + (content.title || "Chapter "+(1+index)+"_"+(1+childIndex))%></text>
+                    <text><%= (1+index) +"."+(1+childIndex) +". " + (child.title || "Chapter "+(1+index)+"_"+(1+childIndex))%></text>
                 </navLabel>
                 <content src="<%= child.href %>"/>
-            </navPoint><% }) %><% } %>
+            </navPoint>
+        <% }) }%><% } %>
         </navPoint>
     <% } %>
 <% }) %>
