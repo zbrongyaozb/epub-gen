@@ -7,9 +7,6 @@
 		"before 2am every monday"
 	],
 	"rangeStrategy": "bump",
-	"lockFileMaintenance": {
-		"enabled": true
-	},
 	"packageRules": [
 		{
 			"matchDatasources": [
@@ -31,10 +28,5 @@
 			"groupName": "all non-major dependencies",
 			"groupSlug": "all-minor-patch"
 		}
-	],
-	"ignorePaths": [
-		"**/config/**",
-		"**/docs/**",
-		"**/server/**"
 	]
 }
