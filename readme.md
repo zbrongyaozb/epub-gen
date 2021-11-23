@@ -1,4 +1,4 @@
-[![NPM version](https://badge.fury.io/js/html-to-epub.svg)](http://badge.fury.io/js/html-to-epub)
+[![npm version](https://badge.fury.io/js/@lesjoursfr%2Fhtml-to-epub.svg)](https://badge.fury.io/js/@lesjoursfr%2Fhtml-to-epub)
 [![Build Status](https://travis-ci.org/lesjoursfr/html-to-epub.svg?branch=master)](https://travis-ci.org/lesjoursfr/html-to-epub)
 
 html-to-epub
@@ -14,19 +14,25 @@ This epub library will generate temp html and download images in your DOMs, then
 
 ## Usage
 
-Install the lib and add it as a dependency (recommended), run on your project dir:
+Install the lib and add it as a dependency :
 
-	npm install epub-gen --save
+```
+    npm install @lesjoursfr/html-to-epub
+```
 
 Then put this in your code:
 
 ```javascript
-    const Epub = require("epub-gen");
+    const { EPub } = require("@lesjoursfr/html-to-epub");
 
-    new Epub(option [, output]).promise.then(
-        () => console.log("Ebook Generated Successfully!"),
-	err => console.error("Failed to generate Ebook because of ", err)
-    );
+    const epub = new Epub(option, output);
+    epub.render()
+        .then(() => {
+            console.log("Ebook Generated Successfully!")
+        })
+        .catch((err) => {
+            console.error("Failed to generate Ebook because of ", err)
+        });
 ```
 
 #### Options
