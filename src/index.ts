@@ -25,6 +25,7 @@ function uuid () {
 export interface EpubContentOptions {
   title: string;
   data: string;
+  url: string | undefined;
   author: Array<string> | string | undefined;
   filename: string | undefined;
   excludeFromToc: boolean | undefined;
@@ -55,9 +56,10 @@ export interface EpubOptions {
 
 interface EpubContent {
   id: string;
-  url: string;
+  href: string;
   title: string;
   data: string;
+  url: string | null;
   author: Array<string>;
   filePath: string;
   excludeFromToc: boolean;
@@ -141,13 +143,13 @@ export class EPub {
     this.images = [];
     this.content = options.content.map<EpubContent>((content, index) => {
       // Get the content URL & path
-      let url, filePath;
+      let href, filePath;
       if (content.filename === undefined) {
         const titleSlug = uslug(diacritics(content.title || 'no title'));
-        url = `${index}_${titleSlug}.xhtml`;
+        href = `${index}_${titleSlug}.xhtml`;
         filePath = resolve(this.tempEpubDir, `./OEBPS/${index}_${titleSlug}.xhtml`);
       } else {
-        url = content.filename.match(/\.xhtml$/) ? content.filename : `${content.filename}.xhtml`;
+        href = content.filename.match(/\.xhtml$/) ? content.filename : `${content.filename}.xhtml`;
         if (content.filename.match(/\.xhtml$/)) {
           filePath = resolve(this.tempEpubDir, `./OEBPS/${content.filename}`);
         } else {
@@ -222,9 +224,10 @@ export class EPub {
       // Return the EpubContent
       return {
         id: id,
-        url: url,
+        href: href,
         title: content.title,
         data: $.html('body > *', { xmlMode: true }),
+        url: content.url ?? null,
         author: content.author
           ? (typeof content.author === 'string' ? [content.author] : content.author)
           : [],
