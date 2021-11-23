@@ -12,12 +12,6 @@ jobs:
     node_js: '14'
     script: npm run build
     script: npm run test
-  - stage: Test the project
-    name: Test the project on Windows with NodeJS 14
-    os: windows
-    node_js: '14'
-    script: npm run build
-    script: npm run test
   - stage: Release to NPM
     name: Publish the package to the npmjs repository
     os: linux
