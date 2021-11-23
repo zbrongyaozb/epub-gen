@@ -16,10 +16,11 @@
         "**/.yarn/**": true
     },
     "eslint.format.enable": true,
-    "[javascript]": {
+    "[typescript]": {
         "editor.defaultFormatter": "dbaeumer.vscode-eslint"
     },
     "editor.codeActionsOnSave": {
-        "source.fixAll": true
+        "source.fixAll": true,
+        "source.organizeImports": true
     }
 }

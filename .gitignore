@@ -1,5 +1,9 @@
+# Generated files
+lib
+
 # Tests files
-test/*.epub
+tempDir/*
+tests/*.epub
 
 # Yarn lockfile
 yarn.lock
