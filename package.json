@@ -1,6 +1,6 @@
 {
-	"name": "html-to-epub",
-	"version": "1.0.1",
+	"name": "@lesjoursfr/html-to-epub",
+	"version": "2.0.0",
 	"description": "A library to generate EPUB from HTML. Inspired by epub-gen.",
 	"license": "MIT",
 	"repository": "lesjoursfr/html-to-epub",
