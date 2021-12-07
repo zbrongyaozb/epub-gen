@@ -238,7 +238,7 @@ export class EPub {
     });
   }
 
-  async render () : Promise<void> {
+  async render () : Promise<any> {
     if (this.verbose) { console.log('Generating Template Files.....'); }
     await this.generateTempFile(this.content);
 
@@ -252,6 +252,7 @@ export class EPub {
     await this.generate();
 
     if (this.verbose) { console.log('Done.'); }
+    return { result: 'ok' };
   }
 
   private async generateTempFile (contents: Array<EpubContent>) {

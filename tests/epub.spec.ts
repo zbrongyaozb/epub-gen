@@ -8,8 +8,8 @@ async function runTestOn (input: string) : Promise<boolean> {
   const output = resolve(__dirname, `./${input}.epub`);
 
   const epub = new EPub(params, output);
-  await epub.render();
-  return true;
+  const op = await epub.render();
+  return op.result === 'ok';
 }
 
 test.serial('Ebook > generate v2', async (t) => {
