@@ -25,7 +25,7 @@ Then put this in your code:
 ```javascript
     const { EPub } = require("@lesjoursfr/html-to-epub");
 
-    const epub = new Epub(option, output);
+    const epub = new EPub(option, output);
     epub.render()
         .then(() => {
             console.log("Ebook Generated Successfully!")
