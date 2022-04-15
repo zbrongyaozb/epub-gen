@@ -4,15 +4,10 @@
 		/* Visit https://aka.ms/tsconfig.json to read more about this file */
 		"outDir": "lib",
 		"rootDir": "src",
-		"module": "CommonJS",
+		"module": "commonjs",
 		"declaration": true,
 		"declarationDir": "lib"
 	},
-	"include": [
-		"src/**/*"
-	],
-	"exclude": [
-		"node_modules",
-		"**/*.spec.ts"
-	]
+	"include": ["src/**/*"],
+	"exclude": ["node_modules", "**/*.spec.ts"]
 }
