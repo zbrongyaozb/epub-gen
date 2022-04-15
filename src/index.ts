@@ -112,8 +112,6 @@ export class EPub {
 
     // Options with defaults
     this.cover = options.cover ?? null;
-    this.coverMediaType = null;
-    this.coverExtension = null;
     this.publisher = options.publisher ?? 'anonymous';
     this.author = options.author
       ? (typeof options.author === 'string' ? [options.author] : options.author)
@@ -137,6 +135,17 @@ export class EPub {
     // Temporary folder for work
     this.tempDir = options.tempDir ?? resolve(__dirname, '../tempDir/');
     this.tempEpubDir = resolve(this.tempDir, this.uuid);
+
+    // Check the cover image
+    if (this.cover !== null) {
+      this.coverMediaType = getType(this.cover);
+      if (this.coverMediaType === null) { throw new Error(`The cover image can't be processed : ${this.cover}`); }
+      this.coverExtension = getExtension(this.coverMediaType);
+      if (this.coverExtension === null) { throw new Error(`The cover image can't be processed : ${this.cover}`); }
+    } else {
+      this.coverMediaType = null;
+      this.coverExtension = null;
+    }
 
     // Parse contents & save images
     this.images = [];
@@ -345,10 +354,6 @@ export class EPub {
       return;
     }
 
-    this.coverMediaType = getType(this.cover);
-    if (this.coverMediaType === null) { throw new Error(`The cover image can't be processed : ${this.cover}`); }
-    this.coverExtension = getExtension(this.coverMediaType);
-    if (this.coverExtension === null) { throw new Error(`The cover image can't be processed : ${this.cover}`); }
     const destPath = resolve(this.tempEpubDir, (`./OEBPS/cover.${this.coverExtension}`));
 
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
