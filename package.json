@@ -29,8 +29,10 @@
 	],
 	"scripts": {
 		"freshlock": "rm -rf node_modules/ && rm .yarn/install-state.gz && rm -r .yarn/cache/ && rm yarn.lock && yarn",
-		"build": "npx tsc",
-		"lint": "npx eslint --ext .ts --fix src/",
+		"check-lint": "eslint . --ext .js,.jsx,.ts,.tsx",
+		"check-tsc": "tsc --noEmit",
+		"lint": "eslint . --fix --ext .js,.jsx,.ts,.tsx",
+		"build": "tsc",
 		"test": "ava"
 	},
 	"dependencies": {
