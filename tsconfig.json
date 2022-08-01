@@ -4,7 +4,8 @@
 		/* Visit https://aka.ms/tsconfig.json to read more about this file */
 		"outDir": "lib",
 		"rootDir": "src",
-		"module": "commonjs",
+		"module": "es2020",
+		"moduleResolution": "node",
 		"declaration": true,
 		"declarationDir": "lib"
 	},

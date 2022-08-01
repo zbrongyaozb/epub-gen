@@ -3,7 +3,7 @@ module.exports = {
   trailingComma: "es5",
   overrides: [
     {
-      files: [".eslintrc.js", ".prettierrc.js", "*.json"],
+      files: [".eslintrc.cjs", ".prettierrc.cjs", "*.json"],
       options: {
         printWidth: 80,
       },
